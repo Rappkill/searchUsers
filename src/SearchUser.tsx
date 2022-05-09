@@ -36,7 +36,7 @@ const handleCount= (id:any) => {
             if(user.id===id) { 
                 user.count--
             }
-        setUsersList(newUsersList)
+        setUsersList(newUsersList&&searchResults)
     }
 }
 
@@ -61,7 +61,7 @@ return (
                     <div className="box" key={user.id} onMouseEnter={e => showButton(e)} onMouseLeave={e => hideButton(e)}>                  
                         <p style={{cursor: 'pointer'}} onClick={()=>handleCount(user.id)}>{user.name}</p>
                             <div><p className="dot">{user.count}</p></div>  
-                                <div>
+                        <div>
                             <button className={display} onClick={()=>handleDelete(user)}>X</button>
                         </div>
                     </div>
